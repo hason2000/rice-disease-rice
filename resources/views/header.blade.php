@@ -1,22 +1,18 @@
-<div class="sidebar-menu">
-    <div class="sidebar-header">
-        <div class="logo">
-            <h1>Xin Chao</h1>
-        </div>
+<div id="layout-sidenav" class="layout-sidenav sidenav sidenav-vertical bg-dark">
+    <div class="app-brand demo">
+        <h1>Chao Mung Ban</h1>
     </div>
-    <div class="main-menu">
-        <div class="menu-inner">
-            <nav>
-                <ul class="metismenu" id="menu">
-                    <li class="active">
-                        <ul class="collapse">
-                            <li class="active"><a href="index.html">ICO dashboard</a></li>
-                            <li><a href="index2.html">Ecommerce dashboard</a></li>
-                            <li><a href="index3.html">SEO dashboard</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    <div class="sidenav-divider mt-0"></div>
+
+    <!-- Links -->
+    <ul class="sidenav-inner py-1">
+
+        <!-- Dashboards -->
+        <li class="sidenav-item active">
+            <a href="#" class="sidenav-link">Form</a>
+        </li>
+        <li class="sidenav-item">
+            <a href="#" class="sidenav-link">Question</a>
+        </li>
+    </ul>
 </div>

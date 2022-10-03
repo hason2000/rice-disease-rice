@@ -8,6 +8,6 @@ class RiceController extends Controller
 {
     public function test()
     {
-        return view('welcome');
+        return view('form_way');
     }
 }

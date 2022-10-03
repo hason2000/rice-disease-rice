@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/', [\App\Http\Controllers\RiceController::class, 'test']);
+Route::get('/', [\App\Http\Controllers\RiceController::class, 'test'])->name('form_way');
+Route::get('/question',[\App\Http\Controllers\RiceQuestionController::class, 'question'])->name('question_way');

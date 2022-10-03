@@ -19588,3 +19588,12 @@ a.bg-linux-darker:hover, a.bg-linux-darker:focus {
 .layout-reversed .layout-2 .layout-navbar .layout-sidenav-toggle {
     display: block !important;
 }
+
+
+/* Custom  */
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    width: 90%;
+    margin: 0 auto;
+}

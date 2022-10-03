@@ -11,6 +11,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./main */ "./resources/js/main.js");
 
+__webpack_require__(/*! ./custom */ "./resources/js/custom.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -28,6 +30,16 @@ try {
 } catch (error) {
   console.log(error);
 }
+
+/***/ }),
+
+/***/ "./resources/js/custom.js":
+/*!********************************!*\
+  !*** ./resources/js/custom.js ***!
+  \********************************/
+/***/ (() => {
+
+
 
 /***/ }),
 
@@ -2114,7 +2126,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       r[0] && (r[0][o] = n[o]), r[1] && "__esModule" !== o && (r[1][o] = n[o]), r[2] && (r[2][o] = n[o]);
     }
   }
-}(this);
+}(this); //////////////////////////
 
 /***/ }),
 

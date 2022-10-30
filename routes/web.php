@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RiceQuestionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,6 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('/', [\App\Http\Controllers\RiceController::class, 'test'])->name('form_way');
-Route::get('/question',[\App\Http\Controllers\RiceQuestionController::class, 'question'])->name('question_way');
+Route::get('/question',[\App\Http\Controllers\RiceQuestionController::class, 'index'])->name('question_way');
+Route::post('/question', [RiceQuestionController::class, 'signalQuestion'])->name('question_way_post');
+Route::post('/question-signal', [\App\Http\Controllers\RiceQuestionController::class, 'questionSignal'])->name('question_signal');

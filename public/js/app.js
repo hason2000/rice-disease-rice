@@ -39,7 +39,108 @@ try {
   \********************************/
 /***/ (() => {
 
+$("#question-signals-button").on("click", function (e) {
+  var form = $("#form_question_disease");
+  console.log(form);
+  var actionForm = form.attr("action");
+  $.ajax({
+    type: "POST",
+    url: actionForm,
+    data: form.serialize(),
+    success: function success(data) {
+      console.log(data[0]);
+      var statusContinueQuestion = data[0].statusContinueQuestion;
 
+      if (statusContinueQuestion == 1) {
+        $("div#predict-disease").remove();
+        console.log(document.getElementsByClassName("custom-select"));
+        var classSelect = document.getElementsByClassName("custom-select");
+        console.log(classSelect[0].options.selectedIndex);
+
+        for (var i = 0; i < classSelect.length; i++) {
+          for (var j = 0; j < classSelect[i].options.length; j++) {
+            if (j == classSelect[i].options.selectedIndex) {
+              // console.log('vao day ne');
+              classSelect[i].options[j].setAttribute("selected", true);
+            } // classSelect[i].options[j].attr("disabled", false)
+            else classSelect[i].options[j].setAttribute("disabled", true);
+          }
+        }
+
+        var nextSignalNameTranfer = data[0].nextSignalNameTranfer.split(":");
+        var arrayValSignalName = data[0].arrayValSignalName;
+        var contentOption = "";
+
+        for (var _i = 0; _i < arrayValSignalName.length; _i++) {
+          var text = arrayValSignalName[_i].split(":");
+
+          contentOption += "<option value=\"" + text[0] + "\">" + text[1] + "</option>\n                        ";
+        }
+
+        var htmlContent = "\n                <div class=\"form-group\">\n                    <label for=\"formGroupExampleInput\">" + nextSignalNameTranfer[1] + "</label>\n                    <select class=\"custom-select custom-select-lg mb-3\" name=\"" + nextSignalNameTranfer[0] + "\">\n                        <option selected>Ch\u1ECDn " + nextSignalNameTranfer[1] + "</option>\n                        " + contentOption + "\n                        <option value=\"null\">Kh\xE1c</option>\n                    </select>\n                </div>\n                ";
+        document.getElementById("form_question_disease").insertAdjacentHTML("beforeend", htmlContent);
+
+        if (data[0].diseasesPredict.length > 0) {
+          var predict = document.getElementById("predict-disease");
+
+          if (predict) {
+            predict.innerHTML = "";
+          }
+
+          var diseasesPredict = data[0].diseasesPredict;
+          var aContent = "";
+
+          for (var _i2 = 0; _i2 < diseasesPredict.length; _i2++) {
+            var _text = diseasesPredict[_i2].split(":");
+
+            aContent += "\n                            <a href=\"http://127.0.0.1:8000/disease?name=" + _text[0] + "\">" + _text[1] + "</a>\n                            <br>\n                        ";
+          }
+
+          var _htmlContent = "\n                    <div class=\"result-form mt-5 ml-4\" id=\"predict-disease\">\n                        <h3>H\u1EC7 Th\u1ED1ng Ch\u1EA9n \u0110o\xE1n:</h3>\n                        " + aContent + "\n                    </div>\n                    ";
+
+          document.getElementById("content-right").insertAdjacentHTML("beforeend", _htmlContent);
+        }
+      } else {
+        $('button#question-signals-button').remove();
+        $('div#predict-disease').remove();
+
+        var _predict = document.getElementById("predict-disease");
+
+        if (_predict) {
+          _predict.innerHTML = "";
+        }
+
+        $diseasesPredict = data[0].diseasesPredict;
+
+        if ($diseasesPredict.length == 0) {
+          var _htmlContent2 = "\n                    <div class=\"result-form mt-5 ml-4\" id=\"predict-disease\">\n                        <h3>H\u1EC7 Th\u1ED1ng Ch\u1EA9n \u0110o\xE1n:</h3>\n                        <span>Kh\xF4ng c\xF3 b\u1EC7nh ph\xF9 h\u1EE3p</span>\n                    </div>\n                    ";
+          document.getElementById("content-right").insertAdjacentHTML("beforeend", _htmlContent2);
+        } else {
+          var _predict2 = document.getElementById("predict-disease");
+
+          if (_predict2) {
+            _predict2.innerHTML = "";
+          }
+
+          var _diseasesPredict = data[0].diseasesPredict;
+          var _aContent = "";
+
+          for (var _i3 = 0; _i3 < _diseasesPredict.length; _i3++) {
+            var _text2 = _diseasesPredict[_i3].split(":");
+
+            _aContent += "\n                            <a href=\"http://127.0.0.1:8000/disease?name=" + _text2[0] + "\">" + _text2[1] + "</a>\n                            <br>\n                        ";
+          }
+
+          var _htmlContent3 = "\n                    <div class=\"result-form mt-5 ml-4\" id=\"predict-disease\">\n                        <h3>H\u1EC7 Th\u1ED1ng Ch\u1EA9n \u0110o\xE1n:</h3>\n                        " + _aContent + "\n                    </div>\n                    ";
+
+          document.getElementById("content-right").insertAdjacentHTML("beforeend", _htmlContent3);
+        }
+
+        console.log("truong hop dung cau hoi");
+      }
+    }
+  });
+});
 
 /***/ }),
 

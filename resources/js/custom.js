@@ -1,13 +1,11 @@
 $("#question-signals-button").on("click", function (e) {
     var form = $("#form_question_disease");
-    console.log(form);
     var actionForm = form.attr("action");
     $.ajax({
         type: "POST",
         url: actionForm,
         data: form.serialize(),
         success: function (data) {
-            console.log(data[0]);
             let statusContinueQuestion = data[0].statusContinueQuestion;
             if (statusContinueQuestion == 1) {
                 $("div#predict-disease").remove();
@@ -18,13 +16,11 @@ $("#question-signals-button").on("click", function (e) {
                 for (let i = 0; i < classSelect.length; i++) {
                     for (let j = 0; j < classSelect[i].options.length; j++) {
                         if (j == classSelect[i].options.selectedIndex) {
-                            // console.log('vao day ne');
                             classSelect[i].options[j].setAttribute(
                                 "selected",
                                 true
                             );
                         }
-                        // classSelect[i].options[j].attr("disabled", false)
                         else
                             classSelect[i].options[j].setAttribute(
                                 "disabled",
@@ -49,15 +45,12 @@ $("#question-signals-button").on("click", function (e) {
                 let htmlContent =
                     `
                 <div class="form-group">
-                    <label for="formGroupExampleInput">` +
+                    <label for="formGroupExampleInput" class="custom-label">` +
                     nextSignalNameTranfer[1] +
                     `</label>
                     <select class="custom-select custom-select-lg mb-3" name="` +
                     nextSignalNameTranfer[0] +
                     `">
-                        <option selected>Chọn ` +
-                    nextSignalNameTranfer[1] +
-                    `</option>
                         ` +
                     contentOption +
                     `
@@ -155,3 +148,17 @@ $("#question-signals-button").on("click", function (e) {
         },
     });
 });
+
+// $('#form-signals-button').on("click", function (e) {
+//     var form = $("#form_question_disease");
+//     var actionForm = form.attr("action");
+//     $.ajax({
+//         type: "POST",
+//         url: actionForm,
+//         data: form.serialize(),
+//         success: function (data) {
+
+//         }
+//     });
+// })
+

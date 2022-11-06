@@ -25,12 +25,11 @@ class RiceQuestionController extends Controller
 
     public function questionSignal(Request $request)
     {
-        // dd($request->all());
-        // dd('vao tan day r nek');
         $query = BenhCayLua::query();
         $arrAnswer = $request->all();
         unset($arrAnswer['_token']);
         if (count($arrAnswer) === 6) {
+            // Đã hỏi hết 6 câu hỏi
             foreach ($arrAnswer as $key => $value) {
                 if ($value == 'null') {
                     $query = $query->whereNull($key);
@@ -62,6 +61,7 @@ class RiceQuestionController extends Controller
                     'diseasesPredict' => $diseasesPredict
                 ]));
             }
+            // chưa hỏi hết 6 câu có thể tiếp tục hỏi và chẩn đoán tiếp
         } else {
             foreach ($arrAnswer as $key => $value) {
                 if ($value == 'null') {
@@ -151,12 +151,10 @@ class RiceQuestionController extends Controller
                 }
                 // thuộc tính tiếp theo được hỏi
                 $nextSignalNameTranfer = $nextSignalName . ":" . config('disease.signals.' . $nextSignalName);
-                // dump($nextSignalNameTranfer);
                 // mảng giá trị đi kèm
                 foreach ($arrayValSignalName as $keyS => $valueS) {
                     $arrayValSignalName[$keyS] = $valueS . ":" . config('disease.' . $nextSignalName . '.' . $valueS);
                 }
-                // dump($arrayValSignalName);
                 // dự đoán các loại bệnh (ít nhất trả lời 2 câu hỏi không null)
                 $countAnswerNotNull = 0;
                 foreach ($arrAnswer as $keyA => $valueA) {
@@ -167,7 +165,6 @@ class RiceQuestionController extends Controller
                     $diseasesPredict = [];
                     if (count($diseasesPredictGet) > 0) {
                         foreach ($diseasesPredictGet as $key => $value) {
-                            // dd($value);
                             $result = explode("-", $value['id_name']);
                             if (!in_array($result[0], $diseasesPredict)) $diseasesPredict[] = $result[0];
                         }

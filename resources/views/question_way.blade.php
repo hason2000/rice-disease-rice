@@ -8,9 +8,8 @@
             <form class="mt-2" action="{{ route('question_way_post') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="formGroupExampleInput">Dấu Hiệu</label>
+                    <label for="formGroupExampleInput" class="custom-label">Dấu Hiệu</label>
                     <select class="custom-select custom-select-lg mb-3" name="signal">
-                        <option selected>Chọn Dấu Hiệu</option>
                         @foreach (config('disease.signals') as $key => $value)
                             <option value="{{ $key }}">{{ $value }}</option>
                         @endforeach

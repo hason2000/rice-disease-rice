@@ -19597,3 +19597,8 @@ a.bg-linux-darker:hover, a.bg-linux-darker:focus {
     width: 90%;
     margin: 0 auto;
 }
+
+.custom-label {
+    font-size: 18px;
+    font-weight: bold;
+}

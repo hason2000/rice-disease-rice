@@ -41,14 +41,12 @@ try {
 
 $("#question-signals-button").on("click", function (e) {
   var form = $("#form_question_disease");
-  console.log(form);
   var actionForm = form.attr("action");
   $.ajax({
     type: "POST",
     url: actionForm,
     data: form.serialize(),
     success: function success(data) {
-      console.log(data[0]);
       var statusContinueQuestion = data[0].statusContinueQuestion;
 
       if (statusContinueQuestion == 1) {
@@ -60,10 +58,8 @@ $("#question-signals-button").on("click", function (e) {
         for (var i = 0; i < classSelect.length; i++) {
           for (var j = 0; j < classSelect[i].options.length; j++) {
             if (j == classSelect[i].options.selectedIndex) {
-              // console.log('vao day ne');
               classSelect[i].options[j].setAttribute("selected", true);
-            } // classSelect[i].options[j].attr("disabled", false)
-            else classSelect[i].options[j].setAttribute("disabled", true);
+            } else classSelect[i].options[j].setAttribute("disabled", true);
           }
         }
 
@@ -77,7 +73,7 @@ $("#question-signals-button").on("click", function (e) {
           contentOption += "<option value=\"" + text[0] + "\">" + text[1] + "</option>\n                        ";
         }
 
-        var htmlContent = "\n                <div class=\"form-group\">\n                    <label for=\"formGroupExampleInput\">" + nextSignalNameTranfer[1] + "</label>\n                    <select class=\"custom-select custom-select-lg mb-3\" name=\"" + nextSignalNameTranfer[0] + "\">\n                        <option selected>Ch\u1ECDn " + nextSignalNameTranfer[1] + "</option>\n                        " + contentOption + "\n                        <option value=\"null\">Kh\xE1c</option>\n                    </select>\n                </div>\n                ";
+        var htmlContent = "\n                <div class=\"form-group\">\n                    <label for=\"formGroupExampleInput\" class=\"custom-label\">" + nextSignalNameTranfer[1] + "</label>\n                    <select class=\"custom-select custom-select-lg mb-3\" name=\"" + nextSignalNameTranfer[0] + "\">\n                        " + contentOption + "\n                        <option value=\"null\">Kh\xE1c</option>\n                    </select>\n                </div>\n                ";
         document.getElementById("form_question_disease").insertAdjacentHTML("beforeend", htmlContent);
 
         if (data[0].diseasesPredict.length > 0) {
@@ -140,7 +136,17 @@ $("#question-signals-button").on("click", function (e) {
       }
     }
   });
-});
+}); // $('#form-signals-button').on("click", function (e) {
+//     var form = $("#form_question_disease");
+//     var actionForm = form.attr("action");
+//     $.ajax({
+//         type: "POST",
+//         url: actionForm,
+//         data: form.serialize(),
+//         success: function (data) {
+//         }
+//     });
+// })
 
 /***/ }),
 

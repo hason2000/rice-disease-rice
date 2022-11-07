@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BenhCayLua;
+use App\Models\PhongChuaBenh;
 use Illuminate\Http\Request;
 
 class RiceController extends Controller
@@ -52,5 +53,13 @@ class RiceController extends Controller
         $benh = $diseasesPredict;
         // dd($benh);
         return view('form_way', compact('benh', 'error', 'data'));
+    }
+
+    public function viewDisease($name)
+    {
+        $name = $name . '-1';
+        $idPhongChua = BenhCayLua::where('id_name', $name)->first()->id_phong_chua;
+        $dataBenh = PhongChuaBenh::find($idPhongChua);
+        return view('disease', compact('dataBenh'));
     }
 }

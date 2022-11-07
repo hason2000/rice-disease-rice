@@ -24,3 +24,4 @@ Route::post('/', [RiceController::class, 'process'])->name('form_way');
 Route::get('/question',[\App\Http\Controllers\RiceQuestionController::class, 'index'])->name('question_way');
 Route::post('/question', [RiceQuestionController::class, 'signalQuestion'])->name('question_way_post');
 Route::post('/question-signal', [\App\Http\Controllers\RiceQuestionController::class, 'questionSignal'])->name('question_signal');
+Route::get('/diseases/{name}', [RiceController::class, 'viewDisease'])->name('view_disease');

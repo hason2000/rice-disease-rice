@@ -46,7 +46,7 @@
                     ?>
                     <div class="alert alert-secondary" role="alert"
                         style="margin-top: 20px; width: 60%; margin: 20px auto 0 auto">
-                        <a href="{{ $arrAfterExplore[0] }}">{{ $arrAfterExplore[1] }}</a>
+                        <a href="{{ route('view_disease', ['name' => $arrAfterExplore[0]]) }}">{{ $arrAfterExplore[1] }}</a>
                     </div>
                 @endforeach
             @endif

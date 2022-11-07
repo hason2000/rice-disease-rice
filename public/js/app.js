@@ -89,10 +89,10 @@ $("#question-signals-button").on("click", function (e) {
           for (var _i2 = 0; _i2 < diseasesPredict.length; _i2++) {
             var _text = diseasesPredict[_i2].split(":");
 
-            aContent += "\n                            <a href=\"http://127.0.0.1:8000/disease?name=" + _text[0] + "\">" + _text[1] + "</a>\n                            <br>\n                        ";
+            aContent += "\n                            <div class=\"alert alert-secondary\" role=\"alert\" style=\"margin-top: 20px; width: 60%; margin: 20px auto 0 auto\">\n                                <a href=\"http://127.0.0.1:9000/diseases/" + _text[0] + "\">" + _text[1] + "</a>\n                            </div>\n                            <br>\n                        ";
           }
 
-          var _htmlContent = "\n                    <div class=\"result-form mt-5 ml-4\" id=\"predict-disease\">\n                        <h3>H\u1EC7 Th\u1ED1ng Ch\u1EA9n \u0110o\xE1n:</h3>\n                        " + aContent + "\n                    </div>\n                    ";
+          var _htmlContent = "\n                    <div class=\"result-form mt-5 ml-4\" id=\"predict-disease\">\n                        <h3 class=\"text-center\">H\u1EC7 Th\u1ED1ng Ch\u1EA9n \u0110o\xE1n:</h3>\n                        " + aContent + "\n                    </div>\n                    ";
 
           document.getElementById("content-right").insertAdjacentHTML("beforeend", _htmlContent);
         }
@@ -109,7 +109,7 @@ $("#question-signals-button").on("click", function (e) {
         $diseasesPredict = data[0].diseasesPredict;
 
         if ($diseasesPredict.length == 0) {
-          var _htmlContent2 = "\n                    <div class=\"result-form mt-5 ml-4\" id=\"predict-disease\">\n                        <h3>H\u1EC7 Th\u1ED1ng Ch\u1EA9n \u0110o\xE1n:</h3>\n                        <span>Kh\xF4ng c\xF3 b\u1EC7nh ph\xF9 h\u1EE3p</span>\n                    </div>\n                    ";
+          var _htmlContent2 = "\n                    <div class=\"result-form mt-5 ml-4\" id=\"predict-disease\">\n                        <h3 class=\"text-center\">H\u1EC7 Th\u1ED1ng Ch\u1EA9n \u0110o\xE1n:</h3>\n                        <span>Kh\xF4ng c\xF3 b\u1EC7nh ph\xF9 h\u1EE3p</span>\n                    </div>\n                    ";
           document.getElementById("content-right").insertAdjacentHTML("beforeend", _htmlContent2);
         } else {
           var _predict2 = document.getElementById("predict-disease");
@@ -124,10 +124,10 @@ $("#question-signals-button").on("click", function (e) {
           for (var _i3 = 0; _i3 < _diseasesPredict.length; _i3++) {
             var _text2 = _diseasesPredict[_i3].split(":");
 
-            _aContent += "\n                            <a href=\"http://127.0.0.1:8000/disease?name=" + _text2[0] + "\">" + _text2[1] + "</a>\n                            <br>\n                        ";
+            _aContent += "\n                            <div class=\"alert alert-secondary\" role=\"alert\" style=\"margin-top: 20px; width: 60%; margin: 20px auto 0 auto\">\n                                <a href=\"http://127.0.0.1:9000/diseases/" + _text2[0] + "\">" + _text2[1] + "</a>\n                            </div>\n                            <br>\n                        ";
           }
 
-          var _htmlContent3 = "\n                    <div class=\"result-form mt-5 ml-4\" id=\"predict-disease\">\n                        <h3>H\u1EC7 Th\u1ED1ng Ch\u1EA9n \u0110o\xE1n:</h3>\n                        " + _aContent + "\n                    </div>\n                    ";
+          var _htmlContent3 = "\n                    <div class=\"result-form mt-5 ml-4\" id=\"predict-disease\">\n                        <h3 class=\"text-center\">H\u1EC7 Th\u1ED1ng Ch\u1EA9n \u0110o\xE1n:</h3>\n                        " + _aContent + "\n                    </div>\n                    ";
 
           document.getElementById("content-right").insertAdjacentHTML("beforeend", _htmlContent3);
         }
@@ -136,17 +136,10 @@ $("#question-signals-button").on("click", function (e) {
       }
     }
   });
-}); // $('#form-signals-button').on("click", function (e) {
-//     var form = $("#form_question_disease");
-//     var actionForm = form.attr("action");
-//     $.ajax({
-//         type: "POST",
-//         url: actionForm,
-//         data: form.serialize(),
-//         success: function (data) {
-//         }
-//     });
-// })
+});
+$("#question-signals-button-reset").on("click", function (e) {
+  location.reload();
+});
 
 /***/ }),
 

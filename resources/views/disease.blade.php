@@ -5,7 +5,7 @@
             <div class="title mb-3" style="width: 23%; margin: 20px auto 20px auto">
                 Bệnh {{ $dataBenh->ghi_chu }}
             </div>
-            <div class="d-flex">
+            <div class="d-flex justify-content-center">
                 <div class="card" style="width: 30rem;margin-left: 30px">
                     <div class="card-body">
                         <h5 class="card-title">Cách Phòng Bệnh</h5>

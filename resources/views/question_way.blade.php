@@ -15,7 +15,7 @@
                         @endforeach
                     </select>
                 </div>
-                <button type="submit" class="btn btn-success">Tiếp tục</button>
+                <button type="submit" class="button-custom-back-home">Tiếp tục</button>
             </form>
         </div>
     </div>

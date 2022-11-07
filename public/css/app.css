@@ -17848,5 +17848,19 @@ a.bg-linux-darker:hover, a.bg-linux-darker:focus {
     transition: all 0.3s;
 }
 
+.button-customer-reset {
+    color: #1E9FF2;
+    background-color: transparent;
+    border: 1px solid #1E9FF2;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.button-customer-reset:hover {
+    background-color: #1E9FF2;
+    color: white;
+    transition: all 0.3s;
+}
+
 
 

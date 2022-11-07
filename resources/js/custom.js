@@ -72,18 +72,16 @@ $("#question-signals-button").on("click", function (e) {
                         let text = diseasesPredict[i].split(":");
                         aContent +=
                             `
-                            <a href="http://127.0.0.1:8000/disease?name=` +
-                            text[0] +
-                            `">` +
-                            text[1] +
-                            `</a>
+                            <div class="alert alert-secondary" role="alert" style="margin-top: 20px; width: 60%; margin: 20px auto 0 auto">
+                                <a href="http://127.0.0.1:9000/diseases/` + text[0] +`">`+ text[1] +`</a>
+                            </div>
                             <br>
                         `;
                     }
                     let htmlContent =
                         `
                     <div class="result-form mt-5 ml-4" id="predict-disease">
-                        <h3>Hệ Thống Chẩn Đoán:</h3>
+                        <h3 class="text-center">Hệ Thống Chẩn Đoán:</h3>
                         ` +
                         aContent +
                         `
@@ -104,7 +102,7 @@ $("#question-signals-button").on("click", function (e) {
                 if ($diseasesPredict.length == 0) {
                     let htmlContent = `
                     <div class="result-form mt-5 ml-4" id="predict-disease">
-                        <h3>Hệ Thống Chẩn Đoán:</h3>
+                        <h3 class="text-center">Hệ Thống Chẩn Đoán:</h3>
                         <span>Không có bệnh phù hợp</span>
                     </div>
                     `;
@@ -122,18 +120,16 @@ $("#question-signals-button").on("click", function (e) {
                         let text = diseasesPredict[i].split(":");
                         aContent +=
                             `
-                            <a href="http://127.0.0.1:8000/disease?name=` +
-                            text[0] +
-                            `">` +
-                            text[1] +
-                            `</a>
+                            <div class="alert alert-secondary" role="alert" style="margin-top: 20px; width: 60%; margin: 20px auto 0 auto">
+                                <a href="http://127.0.0.1:9000/diseases/`+ text[0] +`">`+ text[1] +`</a>
+                            </div>
                             <br>
                         `;
                     }
                     let htmlContent =
                         `
                     <div class="result-form mt-5 ml-4" id="predict-disease">
-                        <h3>Hệ Thống Chẩn Đoán:</h3>
+                        <h3 class="text-center">Hệ Thống Chẩn Đoán:</h3>
                         ` +
                         aContent +
                         `
@@ -149,16 +145,7 @@ $("#question-signals-button").on("click", function (e) {
     });
 });
 
-// $('#form-signals-button').on("click", function (e) {
-//     var form = $("#form_question_disease");
-//     var actionForm = form.attr("action");
-//     $.ajax({
-//         type: "POST",
-//         url: actionForm,
-//         data: form.serialize(),
-//         success: function (data) {
-
-//         }
-//     });
-// })
+$("#question-signals-button-reset").on("click", function (e) {
+    location.reload();
+});
 

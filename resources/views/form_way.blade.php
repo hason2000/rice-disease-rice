@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 @endforeach
-                <button class="btn btn-success mt-5" id="form-signals-button">Chẩn Đoán</button>
+                <button class="button-custom-back-home mt-5" id="form-signals-button">Chẩn Đoán</button>
             </form>
             @if (isset($error) && $error === 1)
                 <div class="alert alert-warning" role="alert"

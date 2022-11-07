@@ -20,7 +20,10 @@
                     </div>
                 @endif
             </form>
-            <button type="submit" class="btn btn-success" id="question-signals-button">Tiếp tục</button>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="button-custom-back-home" id="question-signals-button">Tiếp tục</button>
+                <button type="button" class="button-customer-reset" id="question-signals-button-reset">Làm mới</button>
+            </div>
             </div>
         </div>
     </div>

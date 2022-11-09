@@ -89,7 +89,7 @@ $("#question-signals-button").on("click", function (e) {
           for (var _i2 = 0; _i2 < diseasesPredict.length; _i2++) {
             var _text = diseasesPredict[_i2].split(":");
 
-            aContent += "\n                            <div class=\"alert alert-secondary\" role=\"alert\" style=\"margin-top: 20px; width: 60%; margin: 20px auto 0 auto\">\n                                <a href=\"http://127.0.0.1:9000/diseases/" + _text[0] + "\">" + _text[1] + "</a>\n                            </div>\n                            <br>\n                        ";
+            aContent += "\n                            <div class=\"alert alert-secondary\" role=\"alert\" style=\"margin-top: 20px; width: 60%; margin: 20px auto 0 auto\">\n                                <a href=\"http://127.0.0.1:8000/diseases/" + _text[0] + "\">" + _text[1] + "</a>\n                            </div>\n                            <br>\n                        ";
           }
 
           var _htmlContent = "\n                    <div class=\"result-form mt-5 ml-4\" id=\"predict-disease\">\n                        <h3 class=\"text-center\">H\u1EC7 Th\u1ED1ng Ch\u1EA9n \u0110o\xE1n:</h3>\n                        " + aContent + "\n                    </div>\n                    ";
@@ -124,7 +124,7 @@ $("#question-signals-button").on("click", function (e) {
           for (var _i3 = 0; _i3 < _diseasesPredict.length; _i3++) {
             var _text2 = _diseasesPredict[_i3].split(":");
 
-            _aContent += "\n                            <div class=\"alert alert-secondary\" role=\"alert\" style=\"margin-top: 20px; width: 60%; margin: 20px auto 0 auto\">\n                                <a href=\"http://127.0.0.1:9000/diseases/" + _text2[0] + "\">" + _text2[1] + "</a>\n                            </div>\n                            <br>\n                        ";
+            _aContent += "\n                            <div class=\"alert alert-secondary\" role=\"alert\" style=\"margin-top: 20px; width: 60%; margin: 20px auto 0 auto\">\n                                <a href=\"http://127.0.0.1:8000/diseases/" + _text2[0] + "\">" + _text2[1] + "</a>\n                            </div>\n                            <br>\n                        ";
           }
 
           var _htmlContent3 = "\n                    <div class=\"result-form mt-5 ml-4\" id=\"predict-disease\">\n                        <h3 class=\"text-center\">H\u1EC7 Th\u1ED1ng Ch\u1EA9n \u0110o\xE1n:</h3>\n                        " + _aContent + "\n                    </div>\n                    ";

@@ -73,7 +73,7 @@ $("#question-signals-button").on("click", function (e) {
                         aContent +=
                             `
                             <div class="alert alert-secondary" role="alert" style="margin-top: 20px; width: 60%; margin: 20px auto 0 auto">
-                                <a href="http://127.0.0.1:9000/diseases/` + text[0] +`">`+ text[1] +`</a>
+                                <a href="http://127.0.0.1:8000/diseases/` + text[0] +`">`+ text[1] +`</a>
                             </div>
                             <br>
                         `;
@@ -121,7 +121,7 @@ $("#question-signals-button").on("click", function (e) {
                         aContent +=
                             `
                             <div class="alert alert-secondary" role="alert" style="margin-top: 20px; width: 60%; margin: 20px auto 0 auto">
-                                <a href="http://127.0.0.1:9000/diseases/`+ text[0] +`">`+ text[1] +`</a>
+                                <a href="http://127.0.0.1:8000/diseases/`+ text[0] +`">`+ text[1] +`</a>
                             </div>
                             <br>
                         `;
